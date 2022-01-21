@@ -1,6 +1,9 @@
 import React from "react";
+import { useParams } from 'react-router-dom'
 
 const WordDefinition = ({ data }) => {
+    const { word } = useParams();
+    console.log(word);
     return(
         <div>
             {data.map(({ word, part_of_speech, definition }, index ) => (

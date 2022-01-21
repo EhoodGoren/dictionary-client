@@ -2,14 +2,13 @@ import React, { useRef } from "react";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const WordSearch = ({ setSearchData, setSearchedWord }) => {
+const WordSearch = ({ setSearchData }) => {
     const wordInput = useRef();
     const navigate = useNavigate();
 
     const searchWord = async (e) => {
         e.preventDefault();
         const currentInput = wordInput.current.value;
-        setSearchedWord(currentInput);
         try {
             const response = await axios.get(`http://localhost:8080/${currentInput}`);
             setSearchData(response.data);

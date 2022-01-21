@@ -5,22 +5,17 @@ import WordDefinition from './WordDefinition';
 
 const App = () => {
     const [searchData, setSearchData] = useState([]);
-    const [searchedWord, setSearchedWord] = useState();
-
     return(
         <BrowserRouter>
             <Routes>
                 <Route
                     path='/'
                     element={
-                        <WordSearch
-                            setSearchData={setSearchData}
-                            setSearchedWord={setSearchedWord}
-                        />
+                        <WordSearch setSearchData={setSearchData} />
                     }
                 />
                 <Route
-                    path={`/${searchedWord}`}
+                    path={'/:word'}
                     element={
                         <WordDefinition data={searchData} />
                     }
