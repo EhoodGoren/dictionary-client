@@ -1,9 +1,10 @@
-import React from "react";
+import React from 'react';
+import WordSearch from './WordInput';
 
 const App = () => {
     return(
         <div>
-            hello
+            <WordSearch />
         </div>
     )
 }
