@@ -1,21 +1,14 @@
 import React, { useRef } from "react";
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const WordSearch = ({ setSearchData }) => {
+const WordSearch = () => {
     const wordInput = useRef();
     const navigate = useNavigate();
 
     const searchWord = async (e) => {
         e.preventDefault();
         const currentInput = wordInput.current.value;
-        try {
-            const response = await axios.get(`http://localhost:8080/${currentInput}`);
-            setSearchData(response.data);
-            navigate(`/${currentInput}`);
-        } catch (error) {
-            setSearchData([]);
-        }
+        navigate(`/${currentInput}`);
     }
     return (
         <form onSubmit={searchWord}>
