@@ -2,20 +2,20 @@ import React, { useRef } from "react";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const WordSearch = ({ setWordData, setRoute }) => {
+const WordSearch = ({ setSearchData, setSearchedWord }) => {
     const wordInput = useRef();
     const navigate = useNavigate();
 
     const searchWord = async (e) => {
         e.preventDefault();
         const currentInput = wordInput.current.value;
-        setRoute(currentInput);
+        setSearchedWord(currentInput);
         try {
             const response = await axios.get(`http://localhost:8080/${currentInput}`);
-            setWordData(response.data);
+            setSearchData(response.data);
             navigate(`/${currentInput}`);
         } catch (error) {
-            setWordData([]);
+            setSearchData([]);
         }
     }
     return (

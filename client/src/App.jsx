@@ -4,8 +4,8 @@ import WordSearch from './WordSearch';
 import WordDefinition from './WordDefinition';
 
 const App = () => {
-    const [wordData, setWordData] = useState([]);
-    const [route, setRoute] = useState();
+    const [searchData, setSearchData] = useState([]);
+    const [searchedWord, setSearchedWord] = useState();
 
     return(
         <BrowserRouter>
@@ -14,15 +14,15 @@ const App = () => {
                     path='/'
                     element={
                         <WordSearch
-                            setWordData={setWordData}
-                            setRoute={setRoute}
+                            setSearchData={setSearchData}
+                            setSearchedWord={setSearchedWord}
                         />
                     }
                 />
                 <Route
-                    path={`/${route}`}
+                    path={`/${searchedWord}`}
                     element={
-                        <WordDefinition data={wordData} />
+                        <WordDefinition data={searchData} />
                     }
                 />
             </Routes>
