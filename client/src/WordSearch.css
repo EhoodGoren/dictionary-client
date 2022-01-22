@@ -24,7 +24,7 @@
 .search-button {
     background-color: #37A0FF;
     color: white;
-    border: 1px gray solid;
+    border: 1px black solid;
     border-radius: 5%;
 }
 .search-button:hover {
