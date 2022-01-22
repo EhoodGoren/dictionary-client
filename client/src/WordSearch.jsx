@@ -10,8 +10,9 @@ const WordSearch = () => {
     const searchWord = async (e) => {
         e.preventDefault();
         const currentInput = wordInput.current.value;
-        if(partInput.current.value) return navigate(`/${currentInput}/${partInput.current.value}`);
-        navigate(`/${currentInput}`);
+        const camelCaseWord = `${currentInput.slice(0,1).toUpperCase()}${currentInput.slice(1)}`
+        if(partInput.current.value) return navigate(`/${camelCaseWord}/${partInput.current.value}`);
+        navigate(`/${camelCaseWord}`);
     }
     return (
         <form onSubmit={searchWord}>
