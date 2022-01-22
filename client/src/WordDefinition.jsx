@@ -10,7 +10,8 @@ const WordDefinition = () => {
     useEffect(() => {
         const searchWord = async () => {
             try {
-                const response = await axios.get(`http://localhost:8080/${word}`);
+                const camelCaseWord = `${word.slice(0,1).toUpperCase()}${word.slice(1)}`;
+                const response = await axios.get(`http://localhost:8080/${camelCaseWord}`);
                 setSearchData(response.data);
             } catch (error) {
                 setSearchData('');
