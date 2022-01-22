@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom'
 import axios from 'axios';
+import './WordDefinitions.css';
 
 const WordDefinition = () => {
     const { word } = useParams();
@@ -21,10 +22,10 @@ const WordDefinition = () => {
     const generateDefinitions = () => {
         if(searchData === '') return <div>No matches</div>
         return searchData.map(({ word, part_of_speech, definition }, index ) => (
-            <div key={`definition${index+1}`}>
-                <h1>{word}</h1>
-                <h2>{part_of_speech}</h2>
-                <div>{definition}</div>
+            <div key={`definition${index+1}`} className='results'>
+                <h1 className='searched-word'>{word}</h1>
+                <h3 className='word-parts'><i>{part_of_speech}</i></h3>
+                <div className='definitions'>{definition}</div>
             </div>
         ));
     }
