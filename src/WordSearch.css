@@ -32,3 +32,6 @@
     box-shadow: 2px 2px black;
     cursor: pointer;
 }
+.search-mode {
+    text-align: center;
+}
