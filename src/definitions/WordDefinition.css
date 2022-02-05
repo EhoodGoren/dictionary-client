@@ -11,3 +11,9 @@
 .searched-word {
     color: #16078D;
 }
+
+.definition-word:hover {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
