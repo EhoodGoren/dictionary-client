@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import WordSearch from './WordSearch';
-import MultipleWordDefinitions from './MultipleWordDefinitions';
-import SpecificWord from './SpecificWord';
-import PartOfSpeechWord from './PartOfSpeechWord';
+import MultipleWordDefinitions from './definitions/MultipleWordDefinitions';
+import SpecificWord from './definitions/SpecificWord';
+import PartOfSpeechWord from './definitions/PartOfSpeechWord';
 
 const App = () => {
     return(
