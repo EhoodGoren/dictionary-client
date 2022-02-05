@@ -1,24 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
 import axios from 'axios';
 import WordDefinition from './WordDefinition';
 import BackButton from '../BackButton';
 
 const PartOfSpeechWord = () => {
     const { part } = useParams();
+    const { search } = useLocation();
     const [searchData, setSearchData] = useState({});
 
     useEffect(() => {
+        const searchQueries = new URLSearchParams(search);
+        const startingQuery = searchQueries.get('letter') || '';
         const searchWord = async () => {
             try {
-                const response = await axios.get(`http://localhost:8080/part-of-speech/${part}`);
+                const response = await axios.get(`http://localhost:8080/part-of-speech/${part}?letter=${startingQuery}`);
                 setSearchData(response.data);
             } catch (error) {
                 setSearchData('');
             }
         }
         searchWord();
-    }, [part]);
+    }, [part, search]);
 
     const generateDefinition = () => {
         if(searchData === '') return <div>No matches</div>

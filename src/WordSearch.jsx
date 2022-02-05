@@ -10,7 +10,7 @@ const WordSearch = () => {
 
     const searchWord = async (e) => {
         e.preventDefault();
-        if(searchMode === 'part-of-speech') return navigate(`/part-of-speech/${partInput.current.value}`)
+        if(searchMode === 'part-of-speech') return navigate(`/part-of-speech/${partInput.current.value}?letter=${wordInput.current.value}`);
         const currentInput = wordInput.current.value;
         if(partInput.current.value) return navigate(`/${currentInput}/${partInput.current.value}`);
         navigate(`/${currentInput}`);
@@ -18,7 +18,7 @@ const WordSearch = () => {
     return (
         <form onSubmit={searchWord}>
             <div className="search-bar">
-                <select className='part-select' ref={partInput} required={searchMode === 'part-of-speech' ? true : false}>
+                <select className='part-select' ref={partInput} required={searchMode === 'part-of-speech'}>
                     <option value=''></option>
                     <option value='n.'>noun</option>
                     <option value='v.'>verb</option>
@@ -26,13 +26,13 @@ const WordSearch = () => {
                     <option value='adv.'>adverb</option>
                     <option value='prep.'>preposition</option>
                 </select>
-                <input className='search-inputs' ref={wordInput} placeholder='Search a word' required disabled={searchMode === 'word' ? false : true}/>
+                <input className='search-inputs' ref={wordInput} placeholder='Search a word' required={searchMode === 'word'} />
                 <button type='submit' className='search-button'>Search</button>
             </div>
             <div className="search-mode">
                 Search by:
                 <label>
-                    <input type='radio' name='search-mode' value='word' onChange={() => setSearchMode('word')}/>
+                    <input type='radio' name='search-mode' value='word' onChange={() => setSearchMode('word')} checked={searchMode === 'word'} />
                     Word
                 </label>
                 <label>
