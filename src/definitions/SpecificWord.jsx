@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom'
 import axios from 'axios';
 import WordDefinition from "./WordDefinition";
+import BackButton from "../BackButton";
 
 const SpecificWord = () => {
     const { word, partOfSpeech } = useParams();
@@ -29,6 +30,7 @@ const SpecificWord = () => {
     
     return(
         <div>
+            <BackButton />
             {generateDefinition()}
         </div>
     )

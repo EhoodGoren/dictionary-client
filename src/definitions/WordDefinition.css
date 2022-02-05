@@ -17,3 +17,12 @@
     text-decoration: underline;
     cursor: pointer;
 }
+
+.back-button {
+    font-size: 120%;
+    width: min-content;
+    margin-left: 5%;
+}
+.back-button:hover {
+    cursor: pointer;
+}
