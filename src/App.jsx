@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import WordSearch from './WordSearch';
 import MultipleWordDefinitions from './definitions/MultipleWordDefinitions';
-import SpecificWord from './definitions/SpecificWord';
+import WordWithPart from './definitions/WordWithPart';
 import PartOfSpeechWord from './definitions/PartOfSpeechWord';
 
 const App = () => {
@@ -19,7 +19,7 @@ const App = () => {
                 />
                 <Route
                     path={'/:word/:partOfSpeech'}
-                    element={<SpecificWord />}
+                    element={<WordWithPart />}
                 />
                 <Route
                     path={'/:word'}

@@ -4,7 +4,7 @@ import axios from 'axios';
 import WordDefinition from "./WordDefinition";
 import BackButton from "../BackButton";
 
-const SpecificWord = () => {
+const WordWithPart = () => {
     const { word, partOfSpeech } = useParams();
     const [searchData, setSearchData] = useState({});
 
@@ -36,4 +36,4 @@ const SpecificWord = () => {
     )
 }
 
-export default SpecificWord;
+export default WordWithPart;
