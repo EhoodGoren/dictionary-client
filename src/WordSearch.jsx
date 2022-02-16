@@ -25,8 +25,9 @@ const WordSearch = () => {
                     <option value='a.'>adjective</option>
                     <option value='adv.'>adverb</option>
                     <option value='prep.'>preposition</option>
+                    <option value='p.'>pronoun</option>
                 </select>
-                <input className='search-inputs' ref={wordInput} placeholder='Search a word' required={searchMode === 'word'} />
+                <input className='search-inputs' ref={wordInput} placeholder={searchMode === 'word' ? 'Search a word' : 'Starting with...'} required={searchMode === 'word'} />
                 <button type='submit' className='search-button'>Search</button>
             </div>
             <div className="search-mode">
