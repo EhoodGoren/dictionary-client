@@ -14,7 +14,7 @@ const PartOfSpeechWord = () => {
         const startingQuery = searchQueries.get('letter') || '';
         const searchWord = async () => {
             try {
-                const response = await axios.get(`http://localhost:8080/part-of-speech/${part}?letter=${startingQuery}`);
+                const response = await axios.get(`https://92ey43hrb3.execute-api.eu-west-1.amazonaws.com/production/part-of-speech/${part}?letter=${startingQuery}`);
                 setSearchData(response.data);
             } catch (error) {
                 setSearchData('');

@@ -12,7 +12,7 @@ const MultipleWordDefinitions = () => {
         const searchWord = async () => {
             try {
                 const camelCaseWord = `${word.slice(0,1).toUpperCase()}${word.slice(1)}`;
-                const response = await axios.get(`http://localhost:8080/${camelCaseWord}`);
+                const response = await axios.get(`https://92ey43hrb3.execute-api.eu-west-1.amazonaws.com/production/${camelCaseWord}`);
                 setSearchData(response.data);
             } catch (error) {
                 setSearchData('');
