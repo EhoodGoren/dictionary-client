@@ -1,6 +1,6 @@
 # Dictionary-client
 
-This project is a React app, which is the front-end of a dictionary project.
+This repository contains a React app, which is the front-end of a dictionary project.
 
 You can check the deployment on AWS S3, at this URL:
 
@@ -11,7 +11,7 @@ Upon starting the app, you will land in this page:
 
 ![Home page](./screenshots/home_page.png)
 
-Use the search bar to search for a word!
+Use the search bar to search for a word.
 
 Searching for a word without any part of speech will result in one or more matching results, as such:
 
