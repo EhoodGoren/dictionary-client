@@ -19,6 +19,14 @@ Searching for a word without any part of speech will result in one or more match
 
 You can narrow the search for a specific word + part of speech with the part of speech dropdown element, and get a single matching word (if there is more than one, then a random matching one will be displayed each search).
 
+Each word in a definition is clickable:
+
+![Clickable words](./screenshots/clickable_words.png)
+
+Clicking it will search the word's defintion:
+
+![Clickable word search](./screenshots/clickable_word_redirect.png)
+
 You can also search for a word by a part of speech, by selecting the part of speech radio button:
 
 ![Switching modes](./screenshots/switching_modes.png)
